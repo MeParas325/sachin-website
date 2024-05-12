@@ -240,14 +240,17 @@
         <h2>Our Work</h2>
         <div class="shorts-wrapper">
             
-            <span id="left-arrow" class="arrow left fa fa-chevron-left"></span>
-            <div class="sub-container">
-                <iframe id="frame1" scrolling="no" src="https://www.youtube.com/embed/33LRsXcfaew"></iframe>
+            <span id="shorts-left-arrow" class="arrow left fa fa-chevron-left"></span>
+            <div class="sub-content">
+                <div class="sub-container">
+                    <iframe id="frame1" scrolling="no" src="https://www.youtube.com/embed/33LRsXcfaew"></iframe>
+                </div>
+                <div class="sub-container">
+                    <iframe id="frame2" scrolling="no" src="https://www.youtube.com/embed/7fzX8D620Ko"></iframe>
+                </div>
             </div>
-            <div class="sub-container">
-                <iframe id="frame2" scrolling="no" src="https://www.youtube.com/embed/7fzX8D620Ko"></iframe>
-            </div>
-            <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+            
+            <span id="shorts-right-arrow" class="arrow right fa fa-chevron-right"></span>
         </div>
         <div class="slider-container">
             <div class="slider">
@@ -530,6 +533,7 @@
             }
             // coding with nick
             testimleftArrow.addEventListener("click", function () {
+                console.log("Clicked")
                 playSlide(currentSlide -= 1);
             })
             testimRightArrow.addEventListener("click", function () {
@@ -560,10 +564,6 @@
             "https://www.youtube.com/embed/cBJrIuv8tys",
             "https://www.youtube.com/embed/jOUyeR8PjU4",
             "https://www.youtube.com/embed/33LRsXcfaew",
-            "https://www.youtube.com/embed/7fzX8D620Ko",
-            "https://www.youtube.com/embed/2IeaKAVmJ-g",
-            "https://www.youtube.com/embed/cBJrIuv8tys",
-            "https://www.youtube.com/embed/jOUyeR8PjU4",
         ];
         const slider = document.querySelector(".slider");
         for (let i = 0; i < vedioLinks.length / 2; i++) {
@@ -571,14 +571,15 @@
         }
         const sliderIcons = document.querySelectorAll(".slider-icons");
         sliderIcons[0].innerHTML = `<i class="fa-solid fa-circle"></i>`;
-        const buttonLeft = document.querySelector(".shorts-container #left-arrow");
-        const buttonRight = document.querySelector(".shorts-container #right-arrow");
+        const buttonLeft = document.querySelector(".shorts-container #shorts-left-arrow");
+        const buttonRight = document.querySelector(".shorts-container #shorts-right-arrow");
 
         const frame1 = document.querySelector("#frame1");
         const frame2 = document.querySelector("#frame2");
 
         let id = 0;
         buttonLeft.addEventListener("click", () => {
+            console.log("Clicked")
             id -= 2;
             for (let i = 0; i < sliderIcons.length; i++)
                 sliderIcons[i].innerHTML = `<i class="fa-regular fa-circle"></i>`;
