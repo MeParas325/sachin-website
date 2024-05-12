@@ -489,9 +489,6 @@ body {
 }
 
 .shorts-wrapper .sub-container iframe{
-    /* position: absolute; */
-    /* top: 0; */
-    /* left: 0; */
     width: 100%;
     height: 100%;
 }
@@ -512,6 +509,7 @@ body {
 
 .sub-content .sub-container{
     width: 360px;
+    transition: 0.3s ease-in-out;
 }
 
 .shorts-container .slider-icons{
@@ -531,6 +529,13 @@ iframe{
     border: none;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+}
+
+@media (width <= 790px) {
+    .shorts-wrapper span{
+        margin: 0 1rem;
+    }
+    
 }
 
 .shorts-wrapper span:hover{
