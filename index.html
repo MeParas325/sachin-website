@@ -38,7 +38,7 @@
                 <a class="header-nav-links" href="#clients">Clients</a>
                 <a class="header-nav-links" href="#pastwork">Past Work</a>
                 <a class="header-nav-links" href="#testim">Testimonials</a>
-                <a class="header-nav-links" href="#contact">Contact Us</a>
+                <a class="header-nav-links" href="#results">Results</a>
             </nav>
             <button class="header-menu-button">
                 <img src="./Images/hamburger.svg" alt="menu-button" class="header-menu-icon">
@@ -52,7 +52,7 @@
             <a class="header-nav-links" href="#clients">Clients</a>
             <a class="header-nav-links" href="#pastwork">Past Work</a>
             <a class="header-nav-links" href="#testim">Testimonials</a>
-            <a class="header-nav-links" href="#contact">Contact Us</a>
+            <a class="header-nav-links" href="#results">Results</a>
         </div>
     </nav>
 
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="section-left-buttons">
-                    <a href="" class="section-left-button" id="start-button">View Projects</a>
+                    <a href="#pastwork" class="section-left-button" id="start-button">View Projects</a>
                     <a href="#contact" class="section-left-button" id="tour-button">Reach Out</a>
                 </div>
             </div>
@@ -245,7 +245,7 @@
                     <iframe id="frame1" scrolling="no" src="https://www.youtube.com/embed/33LRsXcfaew"></iframe>
                 </div>
                 <div class="sub-container">
-                    <iframe id="frame2" scrolling="no" src="https://www.youtube.com/embed/7fzX8D620Ko"></iframe>
+                    <iframe id="frame2" scrolling="no" src="https://www.youtube.com/embed/2IeaKAVmJ-g"></iframe>
                 </div>
             </div>
             
@@ -308,6 +308,29 @@
 
         </div>
     </section>
+
+     <!-- results container -->
+     <div class="results-container" id="results">
+        <h2>Performing Results</h2>
+        <div class="results-wrapper">
+            
+            <span id="results-left-arrow" class="arrow left fa fa-chevron-left"></span>
+            <div class="results-sub-content">
+                <div class="results-sub-container">
+                    <img id="results-image1" src="Images/results/1.png" />
+                </div>
+                <div class="results-sub-container">
+                    <img id="results-image2" src="Images/results/2.png" />
+                </div>
+            </div>
+            
+            <span id="results-right-arrow" class="arrow right fa fa-chevron-right"></span>
+        </div>
+        <div class="results-slider-container">
+            <div class="results-slider">
+            </div>
+        </div>
+    </div>
 
 
     <section class="contact" id="contact">
@@ -372,58 +395,6 @@
     <script src="./js/swiper-bundle.min.js"></script>
 
     <script>
-        // (function () {
-        //     emailjs.init("07fQbufodOpjae0ht"); // Replace YOUR_USER_ID with your EmailJS User ID
-
-        //     document.getElementById('contactForm').addEventListener('submit', function (event) {
-        //         event.preventDefault();
-
-        //         // Fetch form data
-        //         let formData = {
-        //             name: document.getElementById('name').value.trim(),
-        //             email: document.getElementById('email').value.trim(),
-        //             message: document.getElementById('message').value.trim(),
-        //             phoneNo: document.getElementById('phoneNo').value.trim(),
-        //             subject: document.getElementById('subject').value.trim()
-        //         };
-
-        //         console.log(`Name => ${formData.name}, Email => ${formData.email}, Message => ${formData.phoneNo}, Subject => ${formData.subject}, Message => ${formData.message}`)
-
-        //         if (formData.name != "" && formData.email != "", formData.message != "", formData.phoneNo != "", formData.subject != "") {
-        //             emailjs.send("service_4vxi5lj", "template_p96il3r", formData)
-        //                 .then(function (response) {
-        //                     console.log('Email sent:', response);
-        //                     Toastify({
-        //                         text: "Email sent Successfully.",
-        //                         duration: 3000,
-        //                         close: true,
-        //                         gravity: "bottom", // `top` or `bottom`
-        //                         position: "center", // `left`, `center` or `right`
-        //                         style: {
-        //                             background: "#ab68cc"
-        //                         },
-        //                     }).showToast();
-        //                     document.getElementById('contactForm').reset(); // Clear the form
-        //                 }, function (error) {
-        //                     console.error('Email error:', error);
-        //                     alert('Oops! Something went wrong.');
-        //                 });
-        //         } else {
-        //             Toastify({
-        //                 text: "Please fill all the fields",
-        //                 duration: 3000,
-        //                 close: true,
-        //                 gravity: "bottom", // `top` or `bottom`
-        //                 position: "center", // `left`, `center` or `right`
-        //                 style: {
-        //                     background: "red",
-        //                 },
-        //             }).showToast();
-        //         }
-
-        //     });
-        // })();
-
         (function () {
             emailjs.init("CogmWi5aESL6WdGzR"); // Replace YOUR_USER_ID with your EmailJS User ID
 
@@ -542,11 +513,9 @@
         // SHORTS CODE
         const vedioLinks = [
             "https://www.youtube.com/embed/33LRsXcfaew",
-            "https://www.youtube.com/embed/7fzX8D620Ko",
             "https://www.youtube.com/embed/2IeaKAVmJ-g",
             "https://www.youtube.com/embed/cBJrIuv8tys",
             "https://www.youtube.com/embed/jOUyeR8PjU4",
-            "https://www.youtube.com/embed/33LRsXcfaew",
         ];
         const slider = document.querySelector(".slider");
         for (let i = 0; i < vedioLinks.length / 2; i++) {
@@ -582,6 +551,53 @@
             sliderIcons[id / 2].innerHTML = `<i class="fa-solid fa-circle"></i>`;
             frame1.src = vedioLinks[id];
             frame2.src = vedioLinks[id + 1];
+        });
+
+        // performing results code
+        const resultsImages = [
+            "Images/results/1.png",
+            "Images/results/2.png",
+            "Images/results/3.png",
+            "Images/results/4.jpg",
+            "Images/results/5.jpg",
+            "Images/results/1.png",
+        ];
+
+        const resultsSlider = document.querySelector(".results-slider");
+        for (let i = 0; i < resultsImages.length / 2; i++) {
+            resultsSlider.innerHTML += `<button class="results-slider-icons" id="results-slider-icon-${i}"><i class="fa-regular fa-circle"></i></button>`
+        }
+        const resultsSliderIcons = document.querySelectorAll(".results-slider-icons");
+        console.log(resultsSliderIcons)
+        resultsSliderIcons[0].innerHTML = `<i class="fa-solid fa-circle"></i>`;
+
+        const resultsButtonLeft = document.querySelector("#results-left-arrow");
+        const resultsButtonRight = document.querySelector("#results-right-arrow");
+
+        const resultsImage1 = document.querySelector("#results-image1");
+        const resultsImage2 = document.querySelector("#results-image2");
+
+        let id2 = 0;
+        resultsButtonLeft.addEventListener("click", () => {
+            console.log("Clicked")
+            id2 -= 2;
+            for (let i = 0; i < resultsSliderIcons.length; i++)
+                resultsSliderIcons[i].innerHTML = `<i class="fa-regular fa-circle"></i>`;
+            if (id2 < 0) {
+                id2 = resultsImages.length + id2;
+            }
+            resultsSliderIcons[id2 / 2].innerHTML = `<i class="fa-solid fa-circle"></i>`;
+            resultsImage1.src = resultsImages[id2];
+            resultsImage2.src = resultsImages[id2 + 1];
+        });
+        resultsButtonRight.addEventListener("click", () => {
+            id2 += 2;
+            for (let i = 0; i < resultsSliderIcons.length; i++)
+                resultsSliderIcons[i].innerHTML = `<i class="fa-regular fa-circle"></i>`;
+            id2 = id2 % resultsImages.length;
+            resultsSliderIcons[id2 / 2].innerHTML = `<i class="fa-solid fa-circle"></i>`;
+            resultsImage1.src = resultsImages[id2];
+            resultsImage2.src = resultsImages[id2 + 1];
         });
 
     </script>
