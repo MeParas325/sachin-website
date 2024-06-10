@@ -1137,7 +1137,8 @@ border-color: white;
 
     .results-container .results-sub-content{
         flex-direction: column;
-        /* grid-template-rows: ; */
+        height: 80vh;
+        
     }
 
     .results-wrapper span{
