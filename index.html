@@ -236,7 +236,7 @@
 
     <!-- shorts container -->
     <div class="shorts-container" id="pastwork">
-        <h2>Past Work</h2>
+        <h2>Shorts Videos</h2>
         <div class="shorts-wrapper">
             
             <span id="shorts-left-arrow" class="arrow left fa fa-chevron-left"></span>
@@ -253,6 +253,28 @@
         </div>
         <div class="slider-container">
             <div class="slider">
+            </div>
+        </div>
+    </div>
+
+     <!-- long container -->
+     <div class="long-container">
+        <h2>Long Videos</h2>
+        <div class="long-wrapper">
+            <span id="long-left-arrow" class="arrow left fa fa-chevron-left"></span>
+            <div class="long-sub-content">
+                <div class="long-sub-container">
+                    <iframe id="longFrame1" scrolling="no" src="https://www.youtube.com/embed/kRBYjAKzJ3I"></iframe>
+                </div>
+                <div class="long-sub-container">
+                    <iframe id="longFrame2" scrolling="no" src="https://www.youtube.com/embed/ptS3gI0a6uY"></iframe>
+                </div>
+            </div>
+            
+            <span id="long-right-arrow" class="arrow right fa fa-chevron-right"></span>
+        </div>
+        <div class="long-slider-container">
+            <div class="long-slider">
             </div>
         </div>
     </div>
@@ -554,6 +576,52 @@
             frame1.src = vedioLinks[id];
             frame2.src = vedioLinks[id + 1];
         });
+
+        // LONG VIDEOS CODE
+        const longVideosLinks = [
+            "https://www.youtube.com/embed/kRBYjAKzJ3I",
+            "https://www.youtube.com/embed/ptS3gI0a6uY",
+            "https://www.youtube.com/embed/957p178FBoo",
+            "https://www.youtube.com/embed/kRBYjAKzJ3I",
+        ];
+
+        const longVideosSlider = document.querySelector(".long-slider");
+        for (let i = 0; i < longVideosLinks.length / 2; i++) {
+            longVideosSlider.innerHTML += `<button class="long-slider-icons" id="long-slider-icon-${i}"><i class="fa-regular fa-circle"></i></button>`
+        }
+
+        const longSliderIcons = document.querySelectorAll(".long-slider-icons");
+        longSliderIcons[0].innerHTML = `<i class="fa-solid fa-circle"></i>`;
+        const longVideosButtonLeft = document.querySelector(".long-container #long-left-arrow");
+        const longVideosButtonRight = document.querySelector(".long-container #long-right-arrow");
+
+        const longFrame1 = document.querySelector("#longFrame1");
+        const longFrame2 = document.querySelector("#longFrame2");
+
+        let longVideosId = 0;
+        longVideosButtonLeft.addEventListener("click", () => {
+            console.log("Clicked")
+            id -= 2;
+            for (let i = 0; i < longSliderIcons.length; i++)
+                longSliderIcons[i].innerHTML = `<i class="fa-regular fa-circle"></i>`;
+            if (id < 0) {
+                id = longVideosLinks.length + id;
+            }
+            longSliderIcons[id / 2].innerHTML = `<i class="fa-solid fa-circle"></i>`;
+            longFrame1.src = longVideosLinks[id];
+            longFrame2.src = longVideosLinks[id + 1];
+        });
+
+        longVideosButtonRight.addEventListener("click", () => {
+            id += 2;
+            for (let i = 0; i < longSliderIcons.length; i++)
+                longSliderIcons[i].innerHTML = `<i class="fa-regular fa-circle"></i>`;
+            id = id % longVideosLinks.length;
+            longSliderIcons[id / 2].innerHTML = `<i class="fa-solid fa-circle"></i>`;
+            longFrame1.src = longVideosLinks[id];
+            longFrame2.src = longVideosLinks[id + 1];
+        });
+
 
         // performing results code
         const resultsImages = [
